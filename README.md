@@ -24,7 +24,7 @@ implementation 'com.github.cugkuan:LineProgress:1.0.0'
 ## 属性说明
 
 |编号|属性|说明|
-|--|--|
+|--|--|--|
 |1|ll_progressColor|进度条的颜色|
 |2|ll_color|默认的颜色，绘制非进度的颜色|
 |3|ll_dividerWidth|分割线的间隔|
