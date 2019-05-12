@@ -7,7 +7,7 @@
 
 # 添加依赖库
 ```
-implementation 'com.github.cugkuan:LineProgress:1.1.1'
+implementation 'com.github.cugkuan:LineProgress:TAG'
 ```
 
 # 使用
