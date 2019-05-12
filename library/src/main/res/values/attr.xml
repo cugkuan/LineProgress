@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LineIndicatorView">
+        <attr name="ll_indicatorColor" format="reference|color"></attr>
+        <attr name="ll_color" format="color|reference"></attr>
+        <attr name="ll_dividerWidth" format="dimension|reference"></attr>
+        <attr name="ll_dividerColor" format="color|reference"></attr>
+        <attr name="ll_max" format="integer|reference"></attr>
+        <attr name="ll_progress" format="integer|reference"></attr>
+    </declare-styleable>
+</resources>
