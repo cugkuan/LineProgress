@@ -3,7 +3,7 @@
 # LineProgress
 一个进度指示器
 
-![image](/pic/image)
+![image](https://github.com/cugkuan/LineProgress/blob/master/pic/image.jpeg)
 
 # 使用
 ```
