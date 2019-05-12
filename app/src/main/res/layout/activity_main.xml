@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_height="wrap_content">
 
-        <com.cugkuan.widget.LineProgressView
+        <com.cugkuan.progress.LineProgressView
             android:layout_width="match_parent"
             app:ll_dividerWidth="5dp"
             app:ll_dividerColor="@android:color/holo_red_light"

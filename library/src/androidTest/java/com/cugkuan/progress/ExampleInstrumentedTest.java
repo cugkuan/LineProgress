@@ -1,4 +1,4 @@
-package com.cugkuan.widget;
+package com.cugkuan.progress;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
