@@ -10,28 +10,28 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class LineIndicatorView extends View {
+public class LineProgressView extends View {
 
 
     private int mDividerWidth = 4;
     private int mDividerColor = Color.TRANSPARENT;
-    private int mIndicatorColor = Color.parseColor("#66cc33");
-    private int mUnIndicatorColor = Color.parseColor("#cfcfcf");
+    private int mProgressColor = Color.parseColor("#66cc33");
+    private int mUnProgressColor = Color.parseColor("#cfcfcf");
     private int mMax = 10;
     private int progress = 5;
-    private Paint mIndicatorPen;
-    private Paint mUnIndicatorPen;
+    private Paint mProgressPen;
+    private Paint mUnProgressPen;
     private Paint mDividerPen;
     /**
      * 绘制的辅助工具
      */
     private Rect rect = new Rect();
 
-    public LineIndicatorView(Context context) {
+    public LineProgressView(Context context) {
         this(context, null);
     }
 
-    public LineIndicatorView(Context context, @Nullable AttributeSet attrs) {
+    public LineProgressView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
@@ -39,14 +39,14 @@ public class LineIndicatorView extends View {
     private void init(Context context, AttributeSet attrs) {
 
         if (attrs != null) {
-            TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.LineIndicatorView);
-            mIndicatorColor = array.getColor(R.styleable.LineIndicatorView_ll_indicatorColor
+            TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.LineProgressView);
+            mProgressColor = array.getColor(R.styleable.LineProgressView_ll_progressColor
                     , Color.parseColor("#66cc33"));
-            mUnIndicatorColor = array.getColor(R.styleable.LineIndicatorView_ll_color, Color.parseColor("#cfcfcf"));
-            mDividerColor = array.getColor(R.styleable.LineIndicatorView_ll_dividerColor, Color.TRANSPARENT);
-            mMax = array.getColor(R.styleable.LineIndicatorView_ll_max, 10);
-            progress = array.getColor(R.styleable.LineIndicatorView_ll_progress, 5);
-            mDividerWidth = array.getDimensionPixelOffset(R.styleable.LineIndicatorView_ll_dividerWidth, 4);
+            mUnProgressColor = array.getColor(R.styleable.LineProgressView_ll_color, Color.parseColor("#cfcfcf"));
+            mDividerColor = array.getColor(R.styleable.LineProgressView_ll_dividerColor, Color.TRANSPARENT);
+            mMax = array.getColor(R.styleable.LineProgressView_ll_max, 10);
+            progress = array.getColor(R.styleable.LineProgressView_ll_progress, 5);
+            mDividerWidth = array.getDimensionPixelOffset(R.styleable.LineProgressView_ll_dividerWidth, 4);
             if (mMax <= 0) {
                 mMax = 1;
             }
@@ -58,15 +58,15 @@ public class LineIndicatorView extends View {
             }
             array.recycle();
         }
-        mUnIndicatorPen = new Paint();
-        mUnIndicatorPen.setColor(mUnIndicatorColor);
-        mUnIndicatorPen.setAntiAlias(true);
-        mUnIndicatorPen.setStyle(Paint.Style.FILL);
+        mUnProgressPen = new Paint();
+        mUnProgressPen.setColor(mUnProgressColor);
+        mUnProgressPen.setAntiAlias(true);
+        mUnProgressPen.setStyle(Paint.Style.FILL);
 
-        mIndicatorPen = new Paint();
-        mIndicatorPen.setColor(mIndicatorColor);
-        mIndicatorPen.setAntiAlias(true);
-        mIndicatorPen.setStyle(Paint.Style.FILL);
+        mProgressPen = new Paint();
+        mProgressPen.setColor(mProgressColor);
+        mProgressPen.setAntiAlias(true);
+        mProgressPen.setStyle(Paint.Style.FILL);
 
         if (mDividerColor != Color.TRANSPARENT) {
             mDividerPen = new Paint();
@@ -127,9 +127,9 @@ public class LineIndicatorView extends View {
                 rect.set(x, 0, x + each, y);
             }
             if (i < progress) {
-                canvas.drawRect(rect, mIndicatorPen);
+                canvas.drawRect(rect, mProgressPen);
             } else {
-                canvas.drawRect(rect, mUnIndicatorPen);
+                canvas.drawRect(rect, mUnProgressPen);
             }
             //绘制分割线
             if (mDividerPen != null) {
