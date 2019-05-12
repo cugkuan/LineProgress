@@ -14,7 +14,7 @@ implementation 'com.github.cugkuan:LineProgress:1.1.0'
 
 ## 在xml中
 ```
- <com.cugkuan.widget.LineProgressView
+ <com.cugkuan.progress.LineProgressView
             android:layout_width="match_parent"
             app:ll_dividerWidth="5dp"
             app:ll_dividerColor="@android:color/holo_red_light"
