@@ -85,10 +85,12 @@ public class LineProgressView extends View {
         if (mMax <= 0){
             mMax = 1;
         }
+        invalidate();
     }
 
     public void setProgress(int progress){
         this.progress =progress;
+        invalidate();
     }
 
     public void setDividerWidth(int dividerWidth){
@@ -96,6 +98,7 @@ public class LineProgressView extends View {
         if (mDividerWidth < 0){
             mDividerWidth = 0;
         }
+        invalidate();
     }
 
 
